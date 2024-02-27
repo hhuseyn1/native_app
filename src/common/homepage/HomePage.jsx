@@ -12,16 +12,30 @@ import HamburgerSvg from '../../../assets/Hamburger.svg'
 import QRSvg from '../../../assets/QR.svg'
 import HomeSvg from '../../../assets/Home.svg'
 import SubscriptionSvg from '../../../assets/subscription.svg'
+import moment from 'moment'
 
 const date = new Date();
-date.setMonth(date.getDate() - 1);
+date.setMonth(date.getDate() - 2);
 const month = date.toLocaleString([], { month: 'short' });
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
+function getWeekDates() {
+    let now = moment();
+    let weekStart = now.clone().startOf('week');
+    let dates = [];
+  
+    for (let i = 0; i < 7; i++) {
+      dates.push(weekStart.clone().add(i, 'days'));
+    }
+    return dates;
+  }
+
 const HomePage = () => {
     const date = new Date();
     const day = days[date.getDay()];
+    let dates = getWeekDates();
+
   return (
       <>
             <StyledView className='w-full h-[8%] mt-5 flex-row justify-between px-[20px]'>
@@ -128,34 +142,12 @@ const HomePage = () => {
                             <StyledText className='text-black items-center justify-center text-[20px]'>Weekly menu</StyledText>
                         </StyledView>
                         <StyledView className='w-[full] flex-row h-[140px] items-center justify-between'>
-                            <StyledView className='w-[48px] h-[98px] rounded-full bg-green-500 items-center justify-center'>
-                                    <StyledText className='text-lg text-white'>{day}</StyledText>
-                                    <StyledText className='text-lg text-white'>{date.getDate()}</StyledText>
+                            {dates?.map((date,index) =>(
+                                <StyledView key={index} className='w-[48px] h-[98px] rounded-full bg-[#66B600] items-center justify-center'>
+                                    <StyledText className='text-lg text-white'>{date.format('ddd')}</StyledText>
+                                    <StyledText className='text-lg text-white'>{date.format('D')}</StyledText>
                                 </StyledView>
-                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
-                                    <StyledText className='text-lg text-black'>{day}</StyledText>
-                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
-                                </StyledView>
-                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
-                                    <StyledText className='text-lg text-black'>{day}</StyledText>
-                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
-                                </StyledView>
-                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
-                                    <StyledText className='text-lg text-black'>{day}</StyledText>
-                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
-                                </StyledView>
-                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
-                                    <StyledText className='text-lg text-black'>{day}</StyledText>
-                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
-                                </StyledView>
-                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
-                                    <StyledText className='text-lg text-black'>{day}</StyledText>
-                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
-                                </StyledView>
-                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
-                                    <StyledText className='text-lg text-black'>{day}</StyledText>
-                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
-                                </StyledView>
+                            ))}
                         </StyledView>
                     </StyledView>
 
