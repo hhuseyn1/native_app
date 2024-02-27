@@ -32,11 +32,11 @@ const HomePage = () => {
             </StyledView>
 
             <StyledScrollView className='flex-1'>
-                <StyledView  className='bg-white h-[2200px]'>
-                    <StyledView className='w-full h-[25%] items-center'>
+                <StyledView  className='bg-white h-[1350px]'>
+                    <StyledView className='w-full h-[230px] justify-center items-center '>
                         <Carousel1Svg></Carousel1Svg>
                     </StyledView>
-                    <StyledView className='w-full h-[15%] flex-col pl-[20px]'>
+                    <StyledView className='w-full h-[130px] flex-col pl-[20px]'>
                         <StyledText className='text-black text-[20px]'>Categories</StyledText>
                         <StyledView className='flex-row justify-around'>
                             <StyledView className='mt-3 mr-5 items-center'>
@@ -62,7 +62,7 @@ const HomePage = () => {
                         </StyledView>
                     </StyledView>
                     
-                    <StyledView className='w-full h-[8%] mt-5 flex-row justify-between px-[20px]'>
+                    <StyledView className='w-full h-[40px] mt-5 flex-row justify-between px-[20px]'>
                         <StyledText className='text-black text-[20px]'>Today's menu ({new Date().getDate() + ` ${month}`})</StyledText>
                         <StyledText className='text-[14px] items-center text-[#66B600] mt-1'>See more</StyledText>
                     </StyledView>
@@ -94,7 +94,7 @@ const HomePage = () => {
                     </StyledView>
 
                  
-                    <StyledView className='w-full h-[8%] mt-5 flex-row justify-between px-[20px]'>
+                    <StyledView className='w-full h-[50px] mt-5 flex-row justify-between px-[20px]'>
                         <StyledText className='text-black text-[20px]'>Top sales</StyledText>
                         <StyledText className='text-[14px] items-center text-[#66B600] mt-1'>See more</StyledText>
                     </StyledView>
@@ -123,7 +123,7 @@ const HomePage = () => {
                         </StyledView>
 
                     </StyledView>
-                    <StyledView className='pt-5 h-[250px]'>
+                    <StyledView className='pt-5 h-[250px] px-5'>
                         <StyledView className='justify-center'>
                             <StyledText className='text-black items-center justify-center text-[20px]'>Weekly menu</StyledText>
                         </StyledView>
@@ -170,7 +170,7 @@ const HomePage = () => {
             </StyledView>
             <StyledView className='items-center'>
                 <SubscriptionSvg></SubscriptionSvg>
-                <StyledText className='text-black text-[12px] mt-2'>Subscriotion</StyledText>
+                <StyledText className='text-black text-[12px] mt-2'>Subscription</StyledText>
             </StyledView>
             <StyledView className='items-center'>
                 <QRSvg></QRSvg>
