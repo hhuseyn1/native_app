@@ -17,8 +17,11 @@ const date = new Date();
 date.setMonth(date.getDate() - 1);
 const month = date.toLocaleString([], { month: 'short' });
 
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const HomePage = () => {
+    const date = new Date();
+    const day = days[date.getDay()];
   return (
       <>
             <StyledView className='w-full h-[8%] mt-5 flex-row justify-between px-[20px]'>
@@ -29,7 +32,7 @@ const HomePage = () => {
             </StyledView>
 
             <StyledScrollView className='flex-1'>
-                <StyledView  className='bg-white h-[1800px]'>
+                <StyledView  className='bg-white h-[2200px]'>
                     <StyledView className='w-full h-[25%] items-center'>
                         <Carousel1Svg></Carousel1Svg>
                     </StyledView>
@@ -120,8 +123,41 @@ const HomePage = () => {
                         </StyledView>
 
                     </StyledView>
-
-
+                    <StyledView className='pt-5 h-[250px]'>
+                        <StyledView className='justify-center'>
+                            <StyledText className='text-black items-center justify-center text-[20px]'>Weekly menu</StyledText>
+                        </StyledView>
+                        <StyledView className='w-[full] flex-row h-[140px] items-center justify-between'>
+                            <StyledView className='w-[48px] h-[98px] rounded-full bg-green-500 items-center justify-center'>
+                                    <StyledText className='text-lg text-white'>{day}</StyledText>
+                                    <StyledText className='text-lg text-white'>{date.getDate()}</StyledText>
+                                </StyledView>
+                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
+                                    <StyledText className='text-lg text-black'>{day}</StyledText>
+                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
+                                </StyledView>
+                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
+                                    <StyledText className='text-lg text-black'>{day}</StyledText>
+                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
+                                </StyledView>
+                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
+                                    <StyledText className='text-lg text-black'>{day}</StyledText>
+                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
+                                </StyledView>
+                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
+                                    <StyledText className='text-lg text-black'>{day}</StyledText>
+                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
+                                </StyledView>
+                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
+                                    <StyledText className='text-lg text-black'>{day}</StyledText>
+                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
+                                </StyledView>
+                                <StyledView className='w-[48px] h-[98px] rounded-full bg-slate-100 items-center justify-center'>
+                                    <StyledText className='text-lg text-black'>{day}</StyledText>
+                                    <StyledText className='text-lg text-black'>{date.getDate()}</StyledText>
+                                </StyledView>
+                        </StyledView>
+                    </StyledView>
 
                 </StyledView>
 
