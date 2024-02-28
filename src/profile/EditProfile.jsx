@@ -3,8 +3,8 @@ import {
   StyledTextInput,
   StyledText,
   StyledTouchableOpacity,
-} from "../components/StyledComponents";
-import EditProfileIcon from "../../assets/icons/editProfileIcon.svg";
+} from "../StyledComponents";
+import EditProfileIcon from "../../assets/editProfileIcon.svg";
 const EditProfile = () => {
   return (
     <StyledView className="flex-1 bg-[#EDEDED] p-4">

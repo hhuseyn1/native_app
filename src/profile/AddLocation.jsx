@@ -2,9 +2,9 @@ import {
   StyledText,
   StyledTouchableOpacity,
   StyledView,
-} from "../components/StyledComponents";
-import AddLocationIcon from "../../assets/icons/addLocationIcon.svg";
-import RightArrow from "../../assets/icons/rightArrow.svg";
+} from "../StyledComponents";
+import AddLocationIcon from "../../assets/addLocationIcon.svg";
+import RightArrow from "../../assets/rightArrow.svg";
 import { ScrollView } from "react-native";
 
 const AddLocation = () => {

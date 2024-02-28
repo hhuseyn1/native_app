@@ -1,7 +1,7 @@
 import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import OrderCard from './components/OrderCard'
-import { StyledTouchableOpacity, StyledText, StyledView } from '../components/common/StyledComponents'
+import { StyledTouchableOpacity, StyledText, StyledView } from '../components/StyledComponents'
 
 const OrdersPage = () => {
   return (

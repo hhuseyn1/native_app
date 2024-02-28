@@ -2,9 +2,9 @@ import {
   StyledView,
   StyledText,
   StyledTouchableOpacity,
-} from "../components/StyledComponents";
-import ProfileLockIcon from "../../assets/icons/profileLockIcon.svg";
-import RightArrow from "../../assets/icons/rightArrow.svg";
+} from '../components/StyledComponents';
+import ProfileLockIcon from "../../assets/profileLockIcon.svg";
+import RightArrow from "../../assets/rightArrow.svg";
 
 const Settings = () => {
   return (

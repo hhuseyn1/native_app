@@ -1,4 +1,4 @@
-import HomePage from './src/common/homepage/HomePage'
+import HomePage from './src/homepage/HomePage'
 import React from 'react'
 
 const App = () => {

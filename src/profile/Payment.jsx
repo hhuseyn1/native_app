@@ -2,10 +2,10 @@ import {
   StyledView,
   StyledText,
   StyledTouchableOpacity,
-} from "../components/StyledComponents";
-import CardIcon from "../../assets/icons/cardIcon.svg";
-import ProfileDeleteIcon from "../../assets/icons/profileDeleteIcon.svg";
-import PaymentIcon from "../../assets/icons/paymentIcon.svg";
+} from "../StyledComponents";
+import CardIcon from "../../assets/cardIcon.svg";
+import ProfileDeleteIcon from "../../assets/profileDeleteIcon.svg";
+import PaymentIcon from "../../assets/paymentIcon.svg";
 
 const Payment = () => {
   return (

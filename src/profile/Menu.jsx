@@ -2,21 +2,21 @@ import {
   StyledView,
   StyledText,
   StyledTouchableOpacity,
-} from "../components/StyledComponents";
+} from "../StyledComponents";
 import { Modal, ScrollView } from "react-native";
 import { useState } from "react";
-import ProfileUserIcon from "../../assets/icons/profileUserIcon.svg";
-import ProfileLocationIcon from "../../assets/icons/profileLocationIcon.svg";
-import ProfileDeleteIcon from "../../assets/icons/profileDeleteIcon.svg";
-import ProfileDocIcon from "../../assets/icons/profileDocIcon.svg";
-import ProfileInvoiceIcon from "../../assets/icons/profileInvoiceIcon.svg";
-import ProfileCardIcon from "../../assets/icons/profileCardIcon.svg";
-import ProfileSettingIcon from "../../assets/icons/profileSettingIcon.svg";
-import ProfileHelpIcon from "../../assets/icons/profileHelpIcon.svg";
-import ProfileLogOutIcon from "../../assets/icons/profileLogOutIcon.svg";
-import LayoutDeleteIcon from "../../assets/icons/layoutDeleteIcon.svg";
-import LayoutLogOutIcon from "../../assets/icons/layoutLogOutIcon.svg";
-import RightArrow from "../../assets/icons/rightArrow.svg";
+import ProfileUserIcon from "../../assets/profileUserIcon.svg";
+import ProfileLocationIcon from "../../assets/profileLocationIcon.svg";
+import ProfileDeleteIcon from "../../assets/profileDeleteIcon.svg";
+import ProfileDocIcon from "../../assets/profileDocIcon.svg";
+import ProfileInvoiceIcon from "../../assets/profileInvoiceIcon.svg";
+import ProfileCardIcon from "../../assets/profileCardIcon.svg";
+import ProfileSettingIcon from "../../assets/profileSettingIcon.svg";
+import ProfileHelpIcon from "../../assets/profileHelpIcon.svg";
+import ProfileLogOutIcon from "../../assets/profileLogOutIcon.svg";
+import LayoutDeleteIcon from "../../assets/layoutDeleteIcon.svg";
+import LayoutLogOutIcon from "../../assets/layoutLogOutIcon.svg";
+import RightArrow from "../../assets/rightArrow.svg";
 
 const Menu = () => {
   const [activeModal, setActiveModal] = useState("");

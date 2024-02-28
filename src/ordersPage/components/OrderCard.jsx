@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledImg, StyledText, StyledView } from '../../components/common/StyledComponents'
+import { StyledImg, StyledText, StyledView } from '../../components/StyledComponents'
 
 const OrderCard = () => {
   return (

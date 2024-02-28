@@ -4,8 +4,8 @@ import {
   StyledTextInput,
   StyledTouchableOpacity,
 } from "./StyledComponents";
-import EyeIcon from "../../../assets/icons/eyeIcon.svg";
-import EyeClosedIcon from "../../../assets/icons/eyeClosedIcon.svg";
+import EyeIcon from "../../../assets/eyeIcon.svg";
+import EyeClosedIcon from "../../../assets/eyeClosedIcon.svg";
 
 const PasswordInput = ({ placeholder, placeholderTextColor }) => {
   const [password, setPassword] = useState("");
