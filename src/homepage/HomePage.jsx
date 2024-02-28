@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledText,StyledTouchableOpacity,StyledView,StyledScrollView } from '../components/StyledComponents'
+import { StyledText,StyledTouchableOpacity,StyledView,StyledScrollView } from './components/StyledComponent'
 import LocationSvg  from '../../assets/location.svg'
 import ColaSvg from '../../assets/cola.svg' 
 import PizzaSvg from '../../assets/pizza.svg' 
