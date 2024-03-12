@@ -15,7 +15,7 @@ import SubscriptionSvg from '../../assets/subscription.svg'
 import moment from 'moment'
 
 const date = new Date();
-date.setMonth(date.getDate() - 2);
+date.setMonth(date.getDate() + 2 );
 const month = date.toLocaleString([], { month: 'short' });
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -143,12 +143,28 @@ const HomePage = () => {
                         </StyledView>
                         <StyledView className='w-[full] flex-row h-[140px] items-center justify-between'>
                             {dates?.map((date,index) =>(
-                                <StyledView key={index} className='w-[48px] h-[98px] rounded-full bg-[#66B600] items-center justify-center'>
-                                    <StyledText className='text-lg text-white'>{date.format('ddd')}</StyledText>
-                                    <StyledText className='text-lg text-white'>{date.format('D')}</StyledText>
+                                <StyledView 
+                                    key={index} 
+                                    className='w-[48px] h-[98px] rounded-full items-center justify-center'
+                                    style={{backgroundColor: moment().isSame(date, 'day') ? '#66B600' : 'white'}}
+                                >
+                                    <StyledText 
+                                        className='text-lg' 
+                                        style={{color: moment().isSame(date, 'day') ? 'white' : '#66B600'}}
+                                    >
+                                        {date.format('ddd')}
+                                    </StyledText>
+                                    <StyledText 
+                                        className='text-lg' 
+                                        style={{color: moment().isSame(date, 'day') ? 'white' : '#66B600'}}
+                                    >
+                                        {date.format('D')}
+                                    </StyledText>
                                 </StyledView>
                             ))}
                         </StyledView>
+
+
                     </StyledView>
 
                 </StyledView>
