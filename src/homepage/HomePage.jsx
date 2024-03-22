@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyledText,StyledView,StyledScrollView, StyledTouchableOpacity } from './components/StyledComponent'
+import { FlatList } from 'react-native'
 import LocationSvg  from '../../assets/location.svg'
 import ColaSvg from '../../assets/cola.svg' 
 import PizzaSvg from '../../assets/pizza.svg' 
@@ -49,63 +50,47 @@ const HomePage = ({navigation}) => {
                         <Carousel1Svg></Carousel1Svg>
                     </StyledView>
                     
-                    <StyledView className='w-full h-[130px] flex-col pl-[20px]'>
-                        <StyledText className='text-black text-[20px]'>Categories</StyledText>
-                        <StyledView className='flex-row justify-around'>
-                            <StyledView className='mt-3 mr-5 items-center'>
-                                <ColaSvg></ColaSvg>
-                                <StyledText className='text-black text-[14px]'>Drinks</StyledText>
-                            </StyledView>
-                            <StyledView className='mt-3 mr-5 items-center'>
-                                <PizzaSvg></PizzaSvg>
-                                <StyledText className='text-black text-[14px]'>Pizza</StyledText>
-                            </StyledView>
-                            <StyledView className='mt-3 mr-5 items-center'>
-                                <CupcakeSvg></CupcakeSvg>
-                                <StyledText className='text-black text-[14px]'>Desserts</StyledText>
-                            </StyledView>
-                            <StyledView className='mt-3 mr-5 items-center'>
-                                <VeganSvg></VeganSvg>
-                                <StyledText className='text-black text-[14px]'>Vegetarian foods</StyledText>
-                            </StyledView>
-                            <StyledView className='mt-3 mr-5 items-center'>
-                                <CupcakeSvg></CupcakeSvg>
-                                <StyledText className='text-black text-[14px]'>Desserts</StyledText>
-                            </StyledView>
+                    <FlatList
+                    data={[
+                        { key: 'drinks', icon: <ColaSvg />, label: 'Drinks' },
+                        { key: 'pizza', icon: <PizzaSvg />, label: 'Pizza' },
+                        { key: 'desserts1', icon: <CupcakeSvg />, label: 'Desserts' },
+                        { key: 'vegan', icon: <VeganSvg />, label: 'Vegetarian foods' },
+                        { key: 'desserts2', icon: <CupcakeSvg />, label: 'Desserts' },
+                    ]}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item }) => (
+                        <StyledView className='mt-3 mr-5 items-center'>
+                            {item.icon}
+                            <StyledText className='text-black text-[14px]'>{item.label}</StyledText>
                         </StyledView>
-                    </StyledView>
+                    )}
+                />
+
                     
                     <StyledView className='w-full h-[40px] mt-5 flex-row justify-between px-[20px]'>
                         <StyledText className='text-black text-[20px]'>Today's menu ({new Date().getDate() + ` ${month}`})</StyledText>
                         <StyledText className='text-[14px] items-center text-[#66B600] mt-1'>See more</StyledText>
                     </StyledView>
 
-                    <StyledScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <StyledView className='flex-row justify-between'>
-                            <StyledView className='w-[200px] h-[300px] ml-5 justify-evenly items-center'>
-                                <LunchSetSvg className='radius-xl'></LunchSetSvg>
-                                <StyledView className='py-5'>
-                                        <StyledText className='text-black font-bold text-[16px]'>Lunch Set</StyledText>
-                                        <StyledText className='text-black my-1'>Lorem ipsum dolor sit amet, consectetur adipisici</StyledText>
-                                    <StyledView className='items-end pr-1'>
-                                        <StyledText className='text-[14px] text-[#42C2E5] items-center'>from 12 Azn</StyledText>
-                                    </StyledView>
+                    <FlatList
+                    data={[1, 2]} 
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item }) => (
+                        <StyledView className='w-[200px] h-[300px] ml-5 justify-evenly items-center'>
+                            <LunchSetSvg className='radius-xl' />
+                            <StyledView className='py-5'>
+                                <StyledText className='text-black font-bold text-[16px]'>Lunch Set</StyledText>
+                                <StyledText className='text-black my-1'>Lorem ipsum dolor sit amet, consectetur adipisici</StyledText>
+                                <StyledView className='items-end pr-1'>
+                                    <StyledText className='text-[14px] text-[#42C2E5] items-center'>from 12 Azn</StyledText>
                                 </StyledView>
                             </StyledView>
-
-                            <StyledView className='w-[200px] h-[300px] ml-5 justify-evenly items-center'>
-                                <LunchSetSvg className='radius-xl'></LunchSetSvg>
-                                <StyledView className='py-5'>
-                                        <StyledText className='text-black font-bold text-[16px]'>Lunch Set</StyledText>
-                                        <StyledText className='text-black my-1'>Lorem ipsum dolor sit amet, consectetur adipisici</StyledText>
-                                    <StyledView className='items-end pr-1'>
-                                        <StyledText className='text-[14px] text-[#42C2E5] items-center'>from 12 Azn</StyledText>
-                                    </StyledView>
-                                </StyledView>
-                            </StyledView>
-
                         </StyledView>
-                    </StyledScrollView>
+                    )}
+                />
 
                  
                     <StyledView className='w-full h-[50px] mt-5 flex-row justify-between px-[20px]'>
@@ -113,31 +98,24 @@ const HomePage = ({navigation}) => {
                         <StyledText className='text-[14px] items-center text-[#66B600] mt-1'>See more</StyledText>
                     </StyledView>
 
-                    <StyledScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <StyledView className='flex-row justify-between'>
-                            <StyledView className='w-[267px] h-[281px] ml-5 bg-slate-100 justify-evenly items-center rounded-xl'>
-                                <VegetarianSvg className='radius-xl object-fit'></VegetarianSvg>
-                                <StyledView className='py-5'>
-                                    <StyledText className='text-black font-bold text-[16px]'>Vegetarian bowl</StyledText>
-                                    <StyledText className='text-black my-1'>Lorem ipsum dolor sit amet, consectetur adipisici</StyledText>
-                                    <StyledView className='items-end pr-1'>
-                                        <StyledText className='text-[14px] text-[#42C2E5] items-center'>12 Azn</StyledText>
-                                    </StyledView>
-                                </StyledView>
-                            </StyledView>
-
-                            <StyledView className='w-[267px] h-[281px] ml-5 bg-slate-100 justify-evenly items-center rounded-xl'>
-                                <VegetarianSvg className='radius-xl object-fit'></VegetarianSvg>
-                                <StyledView className='py-5'>
-                                    <StyledText className='text-black font-bold text-[16px]'>Vegetarian bowl</StyledText>
-                                    <StyledText className='text-black my-1'>Lorem ipsum dolor sit amet, consectetur adipisici</StyledText>
-                                    <StyledView className='items-end pr-1'>
-                                        <StyledText className='text-[16px] text-[#42C2E5] items-center'>12 Azn</StyledText>
-                                    </StyledView>
+                
+                    <FlatList
+                    data={[1, 2]}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item }) => (
+                        <StyledView className='w-[267px] h-[281px] ml-5 bg-slate-100 justify-evenly items-center rounded-xl'>
+                            <VegetarianSvg className='radius-xl object-fit' />
+                            <StyledView className='py-5'>
+                                <StyledText className='text-black font-bold text-[16px]'>Vegetarian bowl</StyledText>
+                                <StyledText className='text-black my-1'>Lorem ipsum dolor sit amet, consectetur adipisici</StyledText>
+                                <StyledView className='items-end pr-1'>
+                                    <StyledText className='text-[16px] text-[#42C2E5] items-center'>12 Azn</StyledText>
                                 </StyledView>
                             </StyledView>
                         </StyledView>
-                    </StyledScrollView>
+                    )}
+                />         
 
                     </StyledView>
 
