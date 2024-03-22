@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledText,StyledView,StyledScrollView } from './components/StyledComponent'
+import { StyledText,StyledView,StyledScrollView, StyledTouchableOpacity } from './components/StyledComponent'
 import LocationSvg  from '../../assets/location.svg'
 import ColaSvg from '../../assets/cola.svg' 
 import PizzaSvg from '../../assets/pizza.svg' 
@@ -8,15 +8,11 @@ import LunchSetSvg from '../../assets/lunchset.svg'
 import VeganSvg from '../../assets/vegan.svg'
 import VegetarianSvg from '../../assets/vegetarian.svg'
 import Carousel1Svg from '../../assets/carousel1.svg'
-import HamburgerSvg from '../../assets/Hamburger.svg'
-import QRSvg from '../../assets/QR.svg'
-import HomeSvg from '../../assets/Home.svg'
-import SubscriptionSvg from '../../assets/subscription.svg'
+
 import moment from 'moment'
 
-
 const date = new Date();
-date.setMonth(date.getDate() + 2 );
+date.setMonth(date.getMonth());
 const month = date.toLocaleString([], { month: 'short' });
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -32,7 +28,7 @@ function getWeekDates() {
     return dates;
   }
 
-const HomePage = () => {
+const HomePage = ({navigation}) => {
     const date = new Date();
     const day = days[date.getDay()];
     let dates = getWeekDates();
@@ -47,7 +43,7 @@ const HomePage = () => {
             </StyledView>
 
             <StyledScrollView className='flex-1'>
-                <StyledView  className='bg-white h-[1100px]'>
+                <StyledView  className=' h-[1100px]'>
 
                     <StyledView className='w-full h-[230px] justify-center items-center '>
                         <Carousel1Svg></Carousel1Svg>
@@ -177,24 +173,7 @@ const HomePage = () => {
 
             </StyledScrollView>
 
-        <StyledView className='w-full h-[10%] flex-row bg-white bottom-0 absolute items-center justify-around'>
-            <StyledView className='items-center'>
-                <HomeSvg></HomeSvg>
-                <StyledText className='text-black text-[12px] mt-2'>Home</StyledText>
-            </StyledView>
-            <StyledView className='items-center'>
-                <SubscriptionSvg></SubscriptionSvg>
-                <StyledText className='text-black text-[12px] mt-2'>Subscription</StyledText>
-            </StyledView>
-            <StyledView className='items-center'>
-                <QRSvg></QRSvg>
-                <StyledText className='text-black text-[12px] mt-2'>Scan</StyledText>
-            </StyledView>
-            <StyledView className='items-center'>
-                <HamburgerSvg></HamburgerSvg>
-                <StyledText className='text-black text-[12px] mt-2'>Menu</StyledText>
-            </StyledView>
-        </StyledView>
+        
     </>
   )
 }
